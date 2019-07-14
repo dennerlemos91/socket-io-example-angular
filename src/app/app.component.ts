@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { WebSocketService } from "./web-socket.service";
+import { SocketIoService } from './socket-io/socket-io.service';
 
 @Component({
   selector: "app-root",
@@ -9,10 +9,6 @@ import { WebSocketService } from "./web-socket.service";
 export class AppComponent implements OnInit {
   title = "socket-io-example";
 
-  constructor(private webSocketService: WebSocketService) {}
-  ngOnInit() {
-    this.webSocketService.listen("teste").subscribe(res => {
-      console.log(res);
-    });
-  }
+  constructor(private socketIoService: SocketIoService) { }
+  ngOnInit() { }
 }
